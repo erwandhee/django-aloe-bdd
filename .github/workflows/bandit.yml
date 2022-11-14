@@ -13,4 +13,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install bandit
       - name: Run Bandit Report
-        run: bandit -r
+        run: bandit -r C:\Users\derhi\Desktop\Cours\Intégration Scripting\django-aloe-bdd
