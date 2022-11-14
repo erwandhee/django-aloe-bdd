@@ -1,0 +1,26 @@
+name: isort
+
+on: [pull_request, workflow_dispatch]
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  isort:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Python dependencies
+        run: pip install isort
